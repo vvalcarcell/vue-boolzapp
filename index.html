@@ -20,10 +20,10 @@
             <div class="container main-box">
                 <div class="row">
                     <aside class="col-5 d-flex flex-column p-0">
-                        <div class="user-box d-flex align-items-center justify-content-between">
+                        <section class="user-box d-flex align-items-center justify-content-between">
                             <div class="user-info">
                                 <img class="profile-pic" src="./img/avatar_io.jpg" alt="mia immagine profilo">
-                                <h5 class="user-name">Valentina</h5>
+                                <h6 class="user-name">Valentina</h6>
                             </div>
 
                             <div class="actions">
@@ -31,36 +31,37 @@
                                 <i class="fas fa-comment-alt"></i>
                                 <i class="fas fa-ellipsis-v"></i>
                             </div>
-                        </div>
+                        </section>
 
-                        <div class="settings d-flex align-items-center">
+                        <section class="settings d-flex align-items-center">
                             <i class="fas fa-bell-slash"></i>
                             <div>
                                 <h6>Ricevi notifiche di nuovi messaggi</h6>
-                                <span class="setting-option">Attiva notifiche desktop</span>
+                                <span class="text"><a href="#">Attiva notifiche desktop</a></span>
                             </div>
-                        </div>
+                        </section>
 
-                        <div class="search-box">
+                        <section class="search-box">
                             <i class="fas fa-search"></i>
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
-                        </div>
+                        </section>
 
-                        <div class="contacts-box">
+                        <section class="contacts-box">
                             <div class="contact" v-for="(contact,index) in contacts">
                                 <img :src="returnSrc(contact)" class="profile-pic" alt="immagine profilo">
-                                <h5 class="user-name">{{contact.name}}</h5>
+                                <h6 class="user-name">{{contact.name}}</h6>
                             </div>
-                        </div>
+                        </section>
                     </aside>
 
                     <main class="col-7 d-flex flex-column p-0">
-                        <div class="user-box d-flex align-items-center justify-content-between">
+
+                        <section class="user-box d-flex align-items-center justify-content-between">
                             <div class="info-contact d-flex">
                                 <img class="profile-pic" src="img/avatar_io.jpg" alt="">
                                 <div>
-                                    <h5 class=" user-name">Nome Utente</h5>
-                                    <div class="access">Ultimo accesso oggi alle... </div>
+                                    <h6 class=" user-name">Nome Utente</h6>
+                                    <div class="text">Ultimo accesso oggi alle... </div>
                                 </div>
                             </div>
                             <div class="actions">
@@ -68,7 +69,18 @@
                                 <i class="fas fa-paperclip"></i>
                                 <i class="fas fa-ellipsis-v"></i>
                             </div>
-                        </div>
+                        </section>
+
+                        <section class="chat-box d-flex">
+                        </section>
+
+                        <section class="sending-msg d-flex justify-content-between">
+                            <i class="far fa-smile"></i>
+                            <input type="text" placeholder="Scrivi un messaggio">
+                            <i class="fas fa-microphone"></i>
+                        </section>
+
+
                     </main>
                 </div>
             </div>

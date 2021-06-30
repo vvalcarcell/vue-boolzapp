@@ -3,19 +3,22 @@
 width: 60px;
 border-radius: 50%;
 vertical-align: middle;
+cursor: pointer;
 }
 
 .user-name {
 display: inline-block;
+cursor: pointer;
 }
 
 i {
 color: rgb(177, 177, 177);
 font-size: 20px;
 margin: 5px 10px;
+cursor: pointer;
 }
 
-h5, h6 {
+h6 {
 margin-bottom: 0;
 }
 
@@ -25,6 +28,16 @@ border: none;
 
 input:focus {
 outline: none;
+}
+
+.text {
+color: grey;
+font-size: 15px;
+font-weight: 600;
+}
+
+.text a {
+color: grey;
 }
 
 /* END UTILITY CLASSES*/
@@ -37,7 +50,6 @@ padding: 30px 50px;
 }
 
 main, aside {
-border: 1px solid black;
 height: calc(100vh - 60px);
 overflow: hidden;
 }
@@ -72,12 +84,6 @@ border-radius: 50%;
 font-size: 20px;
 }
 
-.setting-option {
-color: gray;
-text-decoration: underline;
-font-size: 20px;
-}
-
 aside .search-box {
 border: 1px solid lightgrey;
 }
@@ -88,13 +94,38 @@ overflow: auto;
 }
 
 .contact {
-margin-bottom: 15px;
+margin-bottom: 18px;
 }
 
-main .access {
-color: grey;
-font-size: 15px;
+main {
+border-left: 2px solid lightgray;
 }
+
+main .chat-box {
+background-image: url('img/mine.jpg');
+width: 98%;
+flex-grow: 1;
+overflow: auto;
+}
+
+.sending-msg {
+background-color: rgb(240, 240, 240);
+padding: 10px 0;
+}
+
+.sending-msg input {
+flex-grow: 1;
+border-radius: 5px;
+padding-left: 15px;
+margin-left: 5px;
+}
+
+.sending-msg i {
+padding: 10px 20px;
+font-size: 28px;
+color: rgb(109, 109, 109);
+}
+
 
 
 /* Scrollbar */
