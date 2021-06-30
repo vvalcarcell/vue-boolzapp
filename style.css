@@ -1,0 +1,62 @@
+/* UTILITY CLASSES*/
+.profile-pic {
+    width: 80px;
+    border-radius: 50%;
+vertical-align: middle;
+}
+
+.user-name {
+display: inline-block;
+}
+
+i {
+    color: rgb(177, 177, 177);
+    font-size: 20px;
+    margin: 5px 10px;
+}
+
+h5, h6 {
+margin-bottom: 0;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* END UTILITY CLASSES*/
+
+
+
+.background {
+height: 100vh;
+padding: 30px 50px;
+}
+
+.chat-box, aside {
+border: 1px solid black;
+}
+
+.settings {
+background-color: rgb(159, 216, 248);
+}
+
+.settings > i {
+    background-color: white;
+    color: rgb(159, 216, 248);
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.setting-option {
+color: gray;
+text-decoration: underline;
+font-size: 20px;
+}
+
+
+
