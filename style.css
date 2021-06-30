@@ -39,9 +39,6 @@ padding: 30px 50px;
 main, aside {
 border: 1px solid black;
 height: calc(100vh - 60px);
-}
-
-aside {
 overflow: hidden;
 }
 
@@ -49,8 +46,9 @@ aside > * {
 padding: 15px;
 }
 
-aside .user-box {
+.user-box {
 background-color: rgb(240, 240, 240);
+padding: 15px;
 }
 
 aside .search-box {
@@ -91,6 +89,11 @@ overflow: auto;
 
 .contact {
 margin-bottom: 15px;
+}
+
+main .access {
+color: grey;
+font-size: 15px;
 }
 
 

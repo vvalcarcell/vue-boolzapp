@@ -94,7 +94,7 @@ new Vue(
         },
         methods: {
             returnSrc: function (contact) {
-                return './img/avatar' + contact.avatar + '.jpg';
+                return 'img/avatar' + contact.avatar + '.jpg';
             }
         }
     }
