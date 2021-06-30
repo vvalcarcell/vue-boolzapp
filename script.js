@@ -73,7 +73,7 @@ new Vue(
                     ],
                 },
                 {
-                    name: 'Luisa',
+                    name: 'Conchita Wurst',
                     avatar: '_4',
                     visible: true,
                     messages: [

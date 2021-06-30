@@ -47,11 +47,16 @@ color: grey;
 .background {
 height: 100vh;
 padding: 30px 50px;
+background: linear-gradient(to bottom, red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
 }
 
 main, aside {
 height: calc(100vh - 60px);
 overflow: hidden;
+}
+
+aside {
+background-color: rgb(240, 240, 240);
 }
 
 aside > * {
@@ -65,11 +70,13 @@ padding: 15px;
 
 aside .search-box {
 margin: 10px;
+background-color: white;
 }
 
 aside .contacts-box {
 margin-right: 15px;
 border-right: 1px solid lightgrey;
+background-color: white;
 }
 
 aside .settings {
@@ -124,6 +131,21 @@ margin-left: 5px;
 padding: 10px 20px;
 font-size: 28px;
 color: rgb(109, 109, 109);
+}
+
+.recived-msg, .sended-msg {
+max-width: 70%;
+margin: 10px 8px;
+padding: 10px;
+border-radius: 10px;
+}
+
+.recived-msg {
+background-color: white;
+}
+
+.sended-msg {
+background-color: lightgreen;
 }
 
 
