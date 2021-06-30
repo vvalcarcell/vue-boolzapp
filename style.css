@@ -166,7 +166,7 @@ background-color: lightgreen;
   }
   
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(97, 96, 96, 0.918); 
+    background: rgb(221, 221, 221); 
   }
 
 
