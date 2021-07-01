@@ -4,6 +4,8 @@ new Vue(
     {
         el: '#app',
         data: {
+            contactIndex: 0,
+            currentProfile: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -92,9 +94,16 @@ new Vue(
             ]
 
         },
+        mounted() {
+            this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
+        },
         methods: {
             returnSrc: function (contact) {
                 return 'img/avatar' + contact.avatar + '.jpg';
+            },
+            moveTo: function (index) {
+                this.contactIndex = index;
+                this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
             }
         }
     }

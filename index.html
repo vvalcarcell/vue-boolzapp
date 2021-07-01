@@ -47,7 +47,7 @@
                         </section>
 
                         <section class="contacts-box">
-                            <div class="contact" v-for="(contact,index) in contacts">
+                            <div class="contact" v-for="(contact,index) in contacts" @click="moveTo(index)">
                                 <img :src="returnSrc(contact)" class="profile-pic" alt="immagine profilo">
                                 <h6 class="user-name">{{contact.name}}</h6>
                             </div>
@@ -58,7 +58,7 @@
 
                         <section class="user-box d-flex align-items-center justify-content-between">
                             <div class="info-contact d-flex">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="">
+                                <img class="profile-pic" :src="currentProfile" alt="">
                                 <div>
                                     <h6 class=" user-name">Michele</h6>
                                     <div class="text">Ultimo accesso oggi alle... </div>
@@ -75,8 +75,8 @@
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                                 veritatis tempore hic perspiciatis eius itaque aliquam
                             </div>
-                            <div class="sended-container d-flex justify-content-end">
-                                <div class="sended-msg">Lorem ipsum dolor sit amet consectetur?</div>
+                            <div class="send-container d-flex justify-content-end">
+                                <div class="send-msg">Lorem ipsum dolor sit amet consectetur?</div>
                             </div>
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                                 veritatis tempore hic perspiciatis eius itaque aliquam
@@ -84,8 +84,8 @@
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                                 veritatis tempore hic perspiciatis eius itaque aliquam
                             </div>
-                            <div class="sended-container d-flex justify-content-end">
-                                <div class="sended-msg">Lorem ipsum dolor sit amet consectetur?</div>
+                            <div class="send-container d-flex justify-content-end">
+                                <div class="send-msg">Lorem ipsum dolor sit amet consectetur?</div>
                             </div>
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                                 veritatis tempore hic perspiciatis eius itaque aliquam
