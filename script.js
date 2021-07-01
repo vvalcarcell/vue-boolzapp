@@ -98,10 +98,13 @@ const add = new Vue(
                 text: 'Ok',
                 status: 'received',
             },
+            filter: '',
+            filteredContacts: '',
 
         },
         mounted() {
             this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
+            this.filterContacts();
         },
         methods: {
             returnSrc: function (contact) {
@@ -123,7 +126,23 @@ const add = new Vue(
                 setTimeout(() => {
                     this.contacts[this.contactIndex].messages.push(this.newAnswer);
                 }, 2000);
+            },
+            filterContacts: function () {
+                this.filteredContacts = this.contacts.filter((contact) => {
+                    if (this.filter === '') {
+                        return true;
+                    } else {
+                        let contactSearch = this.filter.toLowerCase();
+                        let contactFiltered = contact.name.toLowerCase();
+                        if (contactFiltered.includes(contactSearch)) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                });
             }
-        }
+        },
     }
 )

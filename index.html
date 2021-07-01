@@ -43,11 +43,12 @@
 
                         <section class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="filter" type="text" placeholder="Cerca o inizia una nuova chat"
+                                @keyup="filterContacts()">
                         </section>
 
                         <section class="contacts-box">
-                            <div class="contact" v-for="(contact,index) in contacts" @click="moveTo(index)">
+                            <div class="contact" v-for="(contact,index) in filteredContacts" @click="moveTo(index)">
                                 <img :src="returnSrc(contact)" class="profile-pic" alt="immagine profilo">
                                 <h6 class="user-name">{{contact.name}}</h6>
                             </div>
@@ -78,22 +79,6 @@
                                     {{message.text}}
                                 </div>
                             </div>
-
-                            <!-- <div class="send-container d-flex justify-content-end">
-                                <div class="send-msg">Lorem ipsum dolor sit amet consectetur?</div>
-                            </div>
-                            <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                                veritatis tempore hic perspiciatis eius itaque aliquam
-                            </div>
-                            <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                                veritatis tempore hic perspiciatis eius itaque aliquam
-                            </div>
-                            <div class="send-container d-flex justify-content-end">
-                                <div class="send-msg">Lorem ipsum dolor sit amet consectetur?</div>
-                            </div>
-                            <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                                veritatis tempore hic perspiciatis eius itaque aliquam
-                            </div> -->
                         </section>
 
                         <section class="sending-msg d-flex justify-content-between">
