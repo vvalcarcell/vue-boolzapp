@@ -4,18 +4,6 @@ const add = new Vue(
     {
         el: '#app',
         data: {
-            contactIndex: 0,
-            currentProfile: '',
-            myNewMsg: {
-                date: '10/01/2020 15:30:55',
-                status: 'sent',
-            },
-            myNewMsgText: '',
-            newAnswer: {
-                date: '10/01/2020 15:30:55',
-                text: 'Ok',
-                status: 'received',
-            },
             contacts: [
                 {
                     name: 'Michele',
@@ -101,7 +89,15 @@ const add = new Vue(
                         },
                     ],
                 },
-            ]
+            ],
+            contactIndex: 0,
+            currentProfile: '',
+            myNewMsg: '',
+            newAnswer: {
+                date: '10/01/2020 15:30:55',
+                text: 'Ok',
+                status: 'received',
+            },
 
         },
         mounted() {
@@ -116,10 +112,12 @@ const add = new Vue(
                 this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
             },
             sendMyMsg: function () {
-                Vue.set(add.myNewMsg, 'text', this.myNewMsgText)
-                this.contacts[this.contactIndex].messages.push(this.myNewMsg);
-                this.myNewMsgText = '';
-                this.sendAnswer();
+                if (this.myNewMsg !== '') {
+                    let msgToSend = { date: '10/01/2020 15:50:00', text: this.myNewMsg, status: 'sent' };
+                    this.myNewMsg = '';
+                    this.contacts[this.contactIndex].messages.push(msgToSend);
+                    this.sendAnswer();
+                }
             },
             sendAnswer: function () {
                 setTimeout(() => {
