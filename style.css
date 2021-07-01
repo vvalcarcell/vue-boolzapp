@@ -148,6 +148,11 @@ background-color: white;
 background-color: lightgreen;
 }
 
+.container-mgs.sent {
+display: flex;
+justify-content: flex-end;
+}
+
 
 
 /* Scrollbar */

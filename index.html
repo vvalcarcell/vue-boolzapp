@@ -72,8 +72,10 @@
                         </section>
 
                         <section class="chat-box d-flex flex-column">
-                            <div v-for="message in contacts[contactIndex].messages" :class="message.status">
-                                {{message.text}}
+                            <div class="container-msg" :class="message.status">
+                                <div v-for="message in contacts[contactIndex].messages" :class="message.status">
+                                    {{message.text}}
+                                </div>
                             </div>
 
                             <!-- <div class="send-container d-flex justify-content-end">
