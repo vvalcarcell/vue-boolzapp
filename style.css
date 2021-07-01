@@ -133,18 +133,18 @@ font-size: 28px;
 color: rgb(109, 109, 109);
 }
 
-.recived-msg, .send-msg {
+.received, .sent {
 max-width: 70%;
 margin: 10px 8px;
 padding: 10px;
 border-radius: 10px;
 }
 
-.recived-msg {
+.received {
 background-color: white;
 }
 
-.send-msg {
+.sent {
 background-color: lightgreen;
 }
 

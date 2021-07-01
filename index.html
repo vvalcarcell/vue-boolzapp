@@ -60,7 +60,7 @@
                             <div class="info-contact d-flex">
                                 <img class="profile-pic" :src="currentProfile" alt="">
                                 <div>
-                                    <h6 class=" user-name">Michele</h6>
+                                    <h6 class="user-name">{{contacts[contactIndex].name}}</h6>
                                     <div class="text">Ultimo accesso oggi alle... </div>
                                 </div>
                             </div>
@@ -72,10 +72,11 @@
                         </section>
 
                         <section class="chat-box d-flex flex-column">
-                            <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                                veritatis tempore hic perspiciatis eius itaque aliquam
+                            <div v-for="message in contacts[contactIndex].messages" :class="message.status">
+                                {{message.text}}
                             </div>
-                            <div class="send-container d-flex justify-content-end">
+
+                            <!-- <div class="send-container d-flex justify-content-end">
                                 <div class="send-msg">Lorem ipsum dolor sit amet consectetur?</div>
                             </div>
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
@@ -89,7 +90,7 @@
                             </div>
                             <div class="recived-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                                 veritatis tempore hic perspiciatis eius itaque aliquam
-                            </div>
+                            </div> -->
                         </section>
 
                         <section class="sending-msg d-flex justify-content-between">
