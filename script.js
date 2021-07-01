@@ -1,12 +1,21 @@
 Vue.config.devtools = true;
 
-new Vue(
+const add = new Vue(
     {
         el: '#app',
         data: {
             contactIndex: 0,
             currentProfile: '',
-            myNewMsg: '',
+            myNewMsg: {
+                date: '10/01/2020 15:30:55',
+                status: 'sent',
+            },
+            myNewMsgText: '',
+            newAnswer: {
+                date: '10/01/2020 15:30:55',
+                text: 'Ok',
+                status: 'received',
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -27,7 +36,7 @@ new Vue(
                             date: '10/01/2020 16:15:22',
                             text: 'Tutto fatto!',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
                 {
@@ -49,7 +58,7 @@ new Vue(
                             date: '20/03/2020 16:35:00',
                             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
-                        }
+                        },
                     ],
                 },
 
@@ -72,7 +81,7 @@ new Vue(
                             date: '28/03/2020 16:15:22',
                             text: 'Ah scusa!',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
                 {
@@ -89,7 +98,7 @@ new Vue(
                             date: '10/01/2020 15:50:00',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
             ]
@@ -107,9 +116,16 @@ new Vue(
                 this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
             },
             sendMyMsg: function () {
+                Vue.set(add.myNewMsg, 'text', this.myNewMsgText)
                 this.contacts[this.contactIndex].messages.push(this.myNewMsg);
-                this.myNewMsg = '';
+                this.myNewMsgText = '';
+                this.sendAnswer();
             },
+            sendAnswer: function () {
+                setTimeout(() => {
+                    this.contacts[this.contactIndex].messages.push(this.newAnswer);
+                }, 2000);
+            }
         }
     }
 )
