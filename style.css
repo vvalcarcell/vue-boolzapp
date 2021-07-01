@@ -133,29 +133,29 @@ font-size: 28px;
 color: rgb(109, 109, 109);
 }
 
-.received, .sent {
+.msg-text.received, .msg-text.sent {
 max-width: 70%;
 margin: 10px 8px;
 padding: 10px;
 border-radius: 10px;
 }
 
-.received {
+.msg-text.received {
 background-color: white;
 }
 
-.sent {
+.msg-text.sent {
 background-color: lightgreen;
 }
 
-.container-mgs.sent {
-float:right;
-clear:both;
+.msg-container.sent {
+display: flex;
+justify-content: flex-end;
 }
 
-.container-mgs.sent {
-float:left;
-clear:both;
+.msg-container.received {
+display: flex;
+justify-content: flex-start;
 }
 
 

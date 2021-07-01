@@ -72,8 +72,9 @@
                         </section>
 
                         <section class="chat-box d-flex flex-column">
-                            <div class="container-msg" :class="message.status">
-                                <div v-for="message in contacts[contactIndex].messages" :class="message.status">
+                            <div v-for="message in contacts[contactIndex].messages" class="msg-container"
+                                :class="message.status">
+                                <div class="msg-text" :class="message.status">
                                     {{message.text}}
                                 </div>
                             </div>
@@ -97,7 +98,8 @@
 
                         <section class="sending-msg d-flex justify-content-between">
                             <i class="far fa-smile"></i>
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input v-model="myNewMsg" @keyup.enter="sendMyMsg()" type="text"
+                                placeholder="Scrivi un messaggio">
                             <i class="fas fa-microphone"></i>
                         </section>
 

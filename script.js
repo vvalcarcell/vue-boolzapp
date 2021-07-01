@@ -6,6 +6,7 @@ new Vue(
         data: {
             contactIndex: 0,
             currentProfile: '',
+            myNewMsg: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -104,7 +105,11 @@ new Vue(
             moveTo: function (index) {
                 this.contactIndex = index;
                 this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
-            }
+            },
+            sendMyMsg: function () {
+                this.contacts[this.contactIndex].messages.push(this.myNewMsg);
+                this.myNewMsg = '';
+            },
         }
     }
 )
