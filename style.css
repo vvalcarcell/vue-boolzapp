@@ -158,6 +158,10 @@ display: flex;
 justify-content: flex-start;
 }
 
+.msg-date {
+font-size: 10px;
+}
+
 
 
 /* Scrollbar */

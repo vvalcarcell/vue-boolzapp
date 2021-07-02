@@ -12,6 +12,7 @@
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </head>
 
 <body>
@@ -76,7 +77,8 @@
                             <div v-for="message in contacts[contactIndex].messages" class="msg-container"
                                 :class="message.status">
                                 <div class="msg-text" :class="message.status">
-                                    {{message.text}}
+                                    <div>{{message.text}}</div>
+                                    <div class="msg-date d-flex justify-content-end">{{message.date}}</div>
                                 </div>
                             </div>
                         </section>

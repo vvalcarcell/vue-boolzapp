@@ -1,6 +1,6 @@
 Vue.config.devtools = true;
 
-const add = new Vue(
+new Vue(
     {
         el: '#app',
         data: {
@@ -93,11 +93,6 @@ const add = new Vue(
             contactIndex: 0,
             currentProfile: '',
             myNewMsg: '',
-            newAnswer: {
-                date: '10/01/2020 15:30:55',
-                text: 'Ok',
-                status: 'received',
-            },
             filter: '',
             filteredContacts: '',
 
@@ -116,15 +111,20 @@ const add = new Vue(
             },
             sendMyMsg: function () {
                 if (this.myNewMsg !== '') {
-                    let msgToSend = { date: '10/01/2020 15:50:00', text: this.myNewMsg, status: 'sent' };
+                    let msgToSend = { date: this.currentDateTime(), text: this.myNewMsg, status: 'sent' };
                     this.myNewMsg = '';
                     this.contacts[this.contactIndex].messages.push(msgToSend);
                     this.sendAnswer();
                 }
             },
             sendAnswer: function () {
+                const newAnswer = {
+                    date: this.currentDateTime(),
+                    text: 'Ok',
+                    status: 'received',
+                };
                 setTimeout(() => {
-                    this.contacts[this.contactIndex].messages.push(this.newAnswer);
+                    this.contacts[this.contactIndex].messages.push(newAnswer);
                 }, 2000);
             },
             filterContacts: function () {
@@ -142,6 +142,10 @@ const add = new Vue(
                     }
 
                 });
+            },
+            currentDateTime: function () {
+                const dateTime = dayjs();
+                return dateTime.format("DD/MM/YYYY HH:mm")
             }
         },
     }
