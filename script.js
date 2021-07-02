@@ -175,7 +175,7 @@ new Vue(
                     'Ma a noi piaceva così',
                     'Chissà se esiste ancora Msn?'
                 ];
-                let randomAnswer = Doretta[Math.floor(Math.random() * Doretta.length - 1)];
+                let randomAnswer = Doretta[Math.floor(Math.random() * Doretta.length) - 1];
                 return randomAnswer;
             }
         },
