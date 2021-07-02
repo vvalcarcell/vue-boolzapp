@@ -96,6 +96,7 @@ new Vue(
             filter: '',
             filteredContacts: '',
             chevIsClicked: false,
+            msgIndex: '',
 
         },
         mounted() {
@@ -148,8 +149,9 @@ new Vue(
                 const dateTime = dayjs();
                 return dateTime.format("DD/MM/YYYY HH:mm")
             },
-            openMenu: function () {
+            openMenu: function (index) {
                 return this.chevIsClicked = true;
+                return this.msgIndex = index;
             }
         },
     }

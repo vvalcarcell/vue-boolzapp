@@ -74,15 +74,15 @@
                         </section>
 
                         <section class="chat-box d-flex flex-column">
-                            <div v-for="message in contacts[contactIndex].messages" class="msg-container"
+                            <div v-for="(message, index) in contacts[contactIndex].messages" class="msg-container"
                                 :class="message.status">
                                 <div class="msg-text" :class="message.status">
                                     <div class="div-text">{{message.text}}</div>
                                     <div class="msg-date d-flex justify-content-end">{{message.date}}</div>
-                                    <div class="msg-options" @click="openMenu()">
+                                    <div class="msg-options" @click="openMenu(index)">
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
-                                    <div v-if="chevIsClicked" class="msg-menu">
+                                    <div v-if="chevIsClicked && msgIndex == index" class="msg-menu">
                                         <div class="msgInfo">Message Info</div>
                                         <div class="deleteMsg">Delete Message</div>
                                     </div>
