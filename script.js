@@ -97,7 +97,6 @@ new Vue(
             filteredContacts: '',
             chevIsClicked: false,
             msgIndex: '',
-            displayMenu: 'd-none',
 
         },
         mounted() {
@@ -151,14 +150,8 @@ new Vue(
                 return dateTime.format("DD/MM/YYYY HH:mm")
             },
             openMenu: function (index) {
-                // this.chevIsClicked = true;
+                this.chevIsClicked = true;
                 this.msgIndex = index;
-                if (this.msgIndex == index && this.displayMenu === 'd-none') {
-                    this.displayMenu === 'd-block'
-                }
-                if (this.msgIndex == index && this.displayMenu === 'd-block') {
-                    this.displayMenu === 'none'
-                }
             },
             deleteMsg: function (index) {
                 this.contacts[this.contactIndex].messages.splice(index, 1);
