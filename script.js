@@ -151,7 +151,10 @@ new Vue(
             },
             openMenu: function (index) {
                 return this.chevIsClicked = true;
-                return this.msgIndex = index;
+                // return this.msgIndex = index;
+            },
+            deleteMsg: function (index) {
+                this.contacts[this.contactIndex].messages.splice(index, 1);
             }
         },
     }

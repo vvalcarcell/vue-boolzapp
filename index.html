@@ -82,9 +82,9 @@
                                     <div class="msg-options" @click="openMenu(index)">
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
-                                    <div v-if="chevIsClicked && msgIndex == index" class="msg-menu">
+                                    <div v-if="chevIsClicked" class="msg-menu">
                                         <div class="msgInfo">Message Info</div>
-                                        <div class="deleteMsg">Delete Message</div>
+                                        <div class="deleteMsg" @click="deleteMsg(index)">Delete Message</div>
                                     </div>
                                 </div>
                             </div>
