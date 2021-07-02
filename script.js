@@ -95,6 +95,7 @@ new Vue(
             myNewMsg: '',
             filter: '',
             filteredContacts: '',
+            chevIsClicked: false,
 
         },
         mounted() {
@@ -146,6 +147,9 @@ new Vue(
             currentDateTime: function () {
                 const dateTime = dayjs();
                 return dateTime.format("DD/MM/YYYY HH:mm")
+            },
+            openMenu: function () {
+                return this.chevIsClicked = true;
             }
         },
     }

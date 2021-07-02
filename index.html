@@ -77,8 +77,15 @@
                             <div v-for="message in contacts[contactIndex].messages" class="msg-container"
                                 :class="message.status">
                                 <div class="msg-text" :class="message.status">
-                                    <div>{{message.text}}</div>
+                                    <div class="div-text">{{message.text}}</div>
                                     <div class="msg-date d-flex justify-content-end">{{message.date}}</div>
+                                    <div class="msg-options" @click="openMenu()">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div v-if="chevIsClicked" class="msg-menu">
+                                        <div class="msgInfo">Message Info</div>
+                                        <div class="deleteMsg">Delete Message</div>
+                                    </div>
                                 </div>
                             </div>
                         </section>

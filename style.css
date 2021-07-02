@@ -138,6 +138,7 @@ max-width: 70%;
 margin: 10px 8px;
 padding: 10px;
 border-radius: 10px;
+position: relative;
 }
 
 .msg-text.received {
@@ -160,6 +161,45 @@ justify-content: flex-start;
 
 .msg-date {
 font-size: 10px;
+}
+
+.msg-options {
+position: absolute;
+top: 2px;
+right: 2px;
+cursor: pointer;
+opacity: 0;
+}
+
+.msg-options:hover {
+opacity: 1;
+}
+
+.div-text {
+margin-right: 22px;
+}
+
+.msg-menu {
+width: 150px;
+background-color: grey;
+position: absolute;
+top: 25px;
+padding: 15px;
+font-size: 15px;
+line-height: 30px;
+z-index: 1001;
+}
+
+.msg-container.sent .msg-menu {
+right: 12px;
+}
+
+.msg-container.received .msg-menu {
+left: 12px;
+}
+
+.msgInfo, .deleteMsg {
+cursor: pointer;
 }
 
 
