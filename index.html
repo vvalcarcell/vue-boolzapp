@@ -49,9 +49,16 @@
                         </section>
 
                         <section class="contacts-box">
-                            <div class="contact" v-for="(contact,index) in filteredContacts" @click="moveTo(index)">
+                            <div class="contact d-flex" v-for="(contact,index) in filteredContacts"
+                                @click="moveTo(index)">
                                 <img :src="returnSrc(contact)" class="profile-pic" alt="immagine profilo">
-                                <h6 class="user-name">{{contact.name}}</h6>
+                                <div class="contact-data d-flex flex-column">
+                                    <h6 class="user-name">{{contact.name}}</h6>
+                                    <div class="last-msg">{{contact.messages[contact.messages.length -1].text}}</div>
+                                    <div class="last-date">
+                                        {{contact.messages[contact.messages.length-1].date}}
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </aside>

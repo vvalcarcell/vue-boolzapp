@@ -147,7 +147,7 @@ new Vue(
             },
             currentDateTime: function () {
                 const dateTime = dayjs();
-                return dateTime.format("DD/MM/YYYY HH:mm")
+                return dateTime.format("HH:mm")
             },
             openMenu: function (index) {
                 this.chevIsClicked = ''

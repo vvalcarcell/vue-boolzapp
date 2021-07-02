@@ -1,9 +1,22 @@
 /* UTILITY CLASSES*/
 .profile-pic {
 width: 60px;
+height: 60px;
 border-radius: 50%;
 vertical-align: middle;
 cursor: pointer;
+}
+
+.contact-data {
+margin-left: 5px;
+}
+
+.last-msg {
+font-size: 15px;
+}
+
+.last-date {
+font-size: 10px;
 }
 
 .user-name {
