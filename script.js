@@ -150,11 +150,17 @@ new Vue(
                 return dateTime.format("DD/MM/YYYY HH:mm")
             },
             openMenu: function (index) {
-                this.chevIsClicked = true;
+                this.chevIsClicked = ''
+                if (this.chevIsClicked === false || this.chevIsClicked === '') {
+                    this.chevIsClicked = true;
+                } else {
+                    this.chevIsClicked = false;
+                }
                 this.msgIndex = index;
             },
             deleteMsg: function (index) {
                 this.contacts[this.contactIndex].messages.splice(index, 1);
+                this.chevIsClicked = false;
             }
         },
     }
