@@ -97,7 +97,6 @@ new Vue(
             filteredContacts: '',
             chevIsClicked: false,
             msgIndex: '',
-
         },
         mounted() {
             this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
@@ -116,18 +115,20 @@ new Vue(
                     let msgToSend = { date: this.currentDateTime(), text: this.myNewMsg, status: 'sent' };
                     this.myNewMsg = '';
                     this.contacts[this.contactIndex].messages.push(msgToSend);
+                    // this.scrollToBottom();
                     this.sendAnswer();
                 }
             },
             sendAnswer: function () {
                 const newAnswer = {
                     date: this.currentDateTime(),
-                    text: 'Ok',
+                    text: this.answerGenerator(),
                     status: 'received',
                 };
                 setTimeout(() => {
                     this.contacts[this.contactIndex].messages.push(newAnswer);
                 }, 2000);
+                // this.scrollToBottom();
             },
             filterContacts: function () {
                 this.filteredContacts = this.contacts.filter((contact) => {
@@ -147,7 +148,7 @@ new Vue(
             },
             currentDateTime: function () {
                 const dateTime = dayjs();
-                return dateTime.format("HH:mm")
+                return dateTime.format("DD/MM/YYYY HH:mm:ss");
             },
             openMenu: function (index) {
                 this.chevIsClicked = ''
@@ -161,6 +162,21 @@ new Vue(
             deleteMsg: function (index) {
                 this.contacts[this.contactIndex].messages.splice(index, 1);
                 this.chevIsClicked = false;
+            },
+            // scrollToBottom: function () {
+            //     
+            // },
+            answerGenerator: function () {
+                const Doretta = [
+                    'Spero vi ricordiate della mitica Doretta di Msn',
+                    'E dei trilli di Satana',
+                    'Doretta era una carissima ragazza',
+                    "A volte aveva uscite un  po' bizzarre",
+                    'Ma a noi piaceva così',
+                    'Chissà se esiste ancora Msn?'
+                ];
+                let randomAnswer = Doretta[Math.floor(Math.random() * Doretta.length - 1)];
+                return randomAnswer;
             }
         },
     }
