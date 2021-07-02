@@ -56,11 +56,10 @@ color: grey;
 /* END UTILITY CLASSES*/
 
 
-
 .background {
 height: 100vh;
 padding: 30px 50px;
-background: linear-gradient(to bottom, red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+background: linear-gradient(180deg, rgba(66,148,136,1) 15%, rgba(219,219,211,1) 15%);
 }
 
 main, aside {

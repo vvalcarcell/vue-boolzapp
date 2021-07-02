@@ -177,7 +177,7 @@ new Vue(
                 ];
                 let randomAnswer = Doretta[Math.floor(Math.random() * Doretta.length) - 1];
                 return randomAnswer;
-            }
+            },
         },
     }
 )
