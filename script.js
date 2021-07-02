@@ -109,6 +109,7 @@ new Vue(
             moveTo: function (index) {
                 this.contactIndex = index;
                 this.currentProfile = 'img/avatar' + this.contacts[this.contactIndex].avatar + '.jpg';
+                this.chevIsClicked = false;
             },
             sendMyMsg: function () {
                 if (this.myNewMsg !== '') {
@@ -151,8 +152,7 @@ new Vue(
                 return dateTime.format("DD/MM/YYYY HH:mm:ss");
             },
             openMenu: function (index) {
-                this.chevIsClicked = ''
-                if (this.chevIsClicked === false || this.chevIsClicked === '') {
+                if (this.chevIsClicked === false) {
                     this.chevIsClicked = true;
                 } else {
                     this.chevIsClicked = false;
